@@ -11,7 +11,8 @@ const Work = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com/company/the-mathworks_2/"
-                class="z-10 flex items-center justify-center w-6 h-6 bg-red-200 shrink-0 cursor-pointer hover:w-10 hover:h-10 hover:bg-red-500"
+                className="z-10 flex items-center justify-center w-6 h-6 bg-red-200 shrink-0 cursor-pointer hover:w-10 hover:h-10 hover:bg-red-500"
+                aria-label="Visit Mathworks India Pvt Ltd. on LinkedIn"
               ></a>
               <div class="flex w-full bg-red-200 h-0.5"></div>
             </div>
@@ -33,8 +34,9 @@ const Work = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com/company/go-navi/"
-                class="z-10 flex items-center justify-center w-6 h-6 bg-red-200 shrink-0 cursor-pointer hover:w-10 hover:h-10 hover:bg-red-500"
-              ></a>{" "}
+                className="z-10 flex items-center justify-center w-6 h-6 bg-red-200 shrink-0 cursor-pointer hover:w-10 hover:h-10 hover:bg-red-500"
+                aria-label="Visit Navi Technologies on LinkedIn"
+              ></a>
               <div class="flex w-full bg-red-200 h-0.5"></div>
             </div>
             <div class="mt-3 sm:pe-8">
