@@ -1,24 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const SocialLinks = () => {
   return (
     <>
-      <Link
-        to="/"
-        className="w-1/4 h-fit sm:text-start text-end text-red-100 hover:text-black"
-        style={{ writingMode: "vertical-lr" }}
-      >
-        X
-      </Link>
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.youtube.com/@harshavardhanputta4850"
+        href="mailto:harshavardhanputta5@gmail.com"
         className="w-1/4 h-fit sm:text-start text-end text-red-200 hover:text-black"
         style={{ writingMode: "vertical-lr" }}
       >
-        Utube
+        Gmail
       </a>
       <a
         target="_blank"

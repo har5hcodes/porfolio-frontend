@@ -23,7 +23,7 @@ const About = () => {
         <p>
           Career being my primary focus, the rest I'm flexible, enjoying
           different interests of mine. Mainly, Calisthenics, Dance, Swimming,
-          Painting, Travelling, and{" "}
+          Painting, Reading, and{" "}
           <span className="text-3xl  font-bold text-red-500">more!</span>
         </p>
         <p>
