@@ -16,7 +16,7 @@ const ContactForm = () => {
       message: message,
     };
 
-    fetch(process.env.REACT_APP_BACKEND_URL + "/api/contact/submit", {
+    fetch("localhost" + "/api/contact/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
