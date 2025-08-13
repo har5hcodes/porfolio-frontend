@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // Define Netflix colors
 const netflixRed = '#E50914';
-const netflixBlack = '#111827';
+
 const netflixWhite = '#FFFFFF';
 
 const Header = () => {
@@ -49,12 +49,12 @@ const Header = () => {
     <header style={headerStyle}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
-          <a role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-2xl font-bold tracking-tight" style={linkStyle}
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-2xl font-bold tracking-tight bg-transparent border-none p-0 m-0 cursor-pointer" style={linkStyle}
              onMouseEnter={(e) => e.currentTarget.style.color = linkHoverStyle.color}
              onMouseLeave={(e) => e.currentTarget.style.color = linkStyle.color}
           >
             Harshavardhan Putta
-          </a>
+          </button>
 
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#connect" onClick={handleConnectClick} className="font-medium" style={linkStyle}
