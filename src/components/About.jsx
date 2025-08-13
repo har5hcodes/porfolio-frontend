@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import profilePic from '../assets/profile-pic.png';
+import React from 'react';
 
 // Define Netflix colors
 const netflixRed = '#E50914';
@@ -7,7 +6,6 @@ const netflixBlack = '#111827';
 const netflixWhite = '#FFFFFF';
 
 const About = () => {
-  const [showImage, setShowImage] = useState(false);
 
   return (
     <section 

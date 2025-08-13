@@ -49,7 +49,7 @@ const Header = () => {
     <header style={headerStyle}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-2xl font-bold tracking-tight" style={linkStyle}
+          <a role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-2xl font-bold tracking-tight" style={linkStyle}
              onMouseEnter={(e) => e.currentTarget.style.color = linkHoverStyle.color}
              onMouseLeave={(e) => e.currentTarget.style.color = linkStyle.color}
           >
