@@ -1,59 +1,64 @@
-import React from "react";
+import React from 'react';
+
+// Define Netflix colors
+const netflixRed = '#E50914';
+const netflixBlack = '#111827';
+const netflixWhite = '#FFFFFF';
+
+const workExperience = [
+  {
+    company: 'Navi Technologies',
+    role: 'Software Development Engineer',
+    dates: '2024 - Present',
+    url: 'https://www.linkedin.com/company/go-navi/',
+  },
+  {
+    company: 'Mathworks',
+    role: 'Engineering Development Intern',
+    dates: '2023',
+    url: 'https://www.linkedin.com/company/the-mathworks_2/',
+  },
+];
+
+const WorkItem = ({ company, role, dates, url }) => (
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group grid grid-cols-12 gap-4 items-center py-8 border-b transition-all duration-300 cursor-pointer"
+    style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}
+  >
+    <h3 className="col-span-12 md:col-span-5 text-4xl md:text-5xl font-bold tracking-tighter transition-colors duration-300" style={{ color: netflixWhite }}>
+      {company}
+    </h3>
+    <p className="col-span-8 md:col-span-4 text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+      {role}
+    </p>
+    <p className="col-span-2 md:col-span-2 text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+      {dates}
+    </p>
+    <div className="col-span-2 md:col-span-1 flex justify-end">
+      <svg className="w-8 h-8 transform -rotate-45 transition-all duration-300 group-hover:rotate-0 group-hover:translate-x-1" fill="none" stroke={netflixRed} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </div>
+  </a>
+);
 
 const Work = () => {
   return (
-    <div className="flex justify-center  h-5/6 uppercase">
-      <div className="flex justify-around w-full h-full p-10">
-        <ol class="items-center sm:flex">
-          <li class="relative mb-6 sm:mb-0">
-            <div class="flex items-center">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/company/the-mathworks_2/"
-                className="z-10 flex items-center justify-center w-6 h-6 bg-red-200 shrink-0 cursor-pointer hover:w-10 hover:h-10 hover:bg-red-500"
-                aria-label="Visit Mathworks India Pvt Ltd. on LinkedIn"
-              ></a>
-              <div class="flex w-full bg-red-200 h-0.5"></div>
-            </div>
-            <div class="mt-3 sm:pe-8">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Mathworks India Pvt Ltd.
-              </h3>
-              <time class="block mb-2 text-sm font-normal leading-none text-red-400 dark:text-gray-500">
-                May 2023 - July 2023
-              </time>
-              <p class="block mb-2 text-sm font-normal leading-none text-red-400 dark:text-gray-500">
-                Hyderabad
-              </p>
-            </div>
-          </li>
-          <li class="relative mb-6 sm:mb-0">
-            <div class="flex items-center">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/company/go-navi/"
-                className="z-10 flex items-center justify-center w-6 h-6 bg-red-200 shrink-0 cursor-pointer hover:w-10 hover:h-10 hover:bg-red-500"
-                aria-label="Visit Navi Technologies on LinkedIn"
-              ></a>
-              <div class="flex w-full bg-red-200 h-0.5"></div>
-            </div>
-            <div class="mt-3 sm:pe-8">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Navi Technologies
-              </h3>
-              <time class="block mb-2 text-sm font-normal leading-none text-red-400 dark:text-gray-500">
-                July 2024 - Present
-              </time>
-              <p class="block mb-2 text-sm font-normal leading-none text-red-400 dark:text-gray-500">
-                Bangalore
-              </p>
-            </div>
-          </li>
-        </ol>
+    <section id="work" className="w-full py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: netflixBlack }}>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-center text-4xl md:text-6xl font-black uppercase tracking-tighter mb-12" style={{ color: netflixWhite }}>
+          Work Experience
+        </h2>
+        <div className="border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}>
+          {workExperience.map((job, index) => (
+            <WorkItem key={index} {...job} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

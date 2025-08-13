@@ -1,44 +1,35 @@
-import React from "react";
+import React, { useState } from 'react';
+import profilePic from '../assets/profile-pic.png';
+
+// Define Netflix colors
+const netflixRed = '#E50914';
+const netflixBlack = '#111827';
+const netflixWhite = '#FFFFFF';
 
 const About = () => {
-  const resumeUrl = process.env.REACT_APP_RESUME_URL;
+  const [showImage, setShowImage] = useState(false);
+
   return (
-    <div className="flex justify-center bg-red-200 h-5/6">
-      <div className="flex flex-col justify-start w-full h-full p-10 text-md gap-2 sm:gap-4">
-        <p>
-          Hi <span className="text-3xl  font-bold text-red-500 ">Hello</span>,
-          You already know my name by now! Let me share a bit more about my
-          career and other aspects of my life.
-        </p>
-        <p>
-          I'm from a place renowned for its{" "}
-          <span className="text-3xl  font-bold text-red-500">Biryani.</span> I
-          pursued my Dual Degree in ECE from an IIT located in a North-East
-          state, despite its name starting with 'West'. Currently, I'm in the{" "}
-          <span className="text-3xl  font-bold text-red-500">
-            Silicon Valley
-          </span>{" "}
-          of India, climbing the SDE ladder.
-        </p>
-        <p>
-          Career being my primary focus, the rest I'm flexible, enjoying
-          different interests of mine. Mainly, Calisthenics, Dance, Swimming,
-          Painting, Reading, and{" "}
-          <span className="text-3xl  font-bold text-red-500">more!</span>
-        </p>
-        <p>
-          Interested in my resume?{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={resumeUrl}
-            className="text-3xl font-bold text-red-500 hover:underline"
-          >
-            Click here.
-          </a>
+    <section 
+      id="about"
+      className="relative w-full flex flex-col items-center justify-center min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
+      style={{ backgroundColor: netflixBlack }}
+    >
+      <div className="max-w-4xl mx-auto relative z-10">
+        <h1 
+          className="text-6xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none"
+          style={{ color: netflixWhite }}
+        >
+          Harshavardhan Putta
+        </h1>
+        <p 
+          className="mt-4 max-w-3xl mx-auto text-xl sm:text-2xl font-bold"
+          style={{ color: netflixRed }}
+        >
+          Software Engineer & Creative Technologist
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,51 +1,76 @@
-import React from "react";
+import React from 'react';
+
+// Define Netflix colors
+const netflixRed = '#E50914';
+const netflixBlack = '#111827';
+const netflixWhite = '#FFFFFF';
+
+const projects = [
+  {
+    title: 'Swiptory',
+    tagline: 'Story Sharing Platform',
+    year: '2023',
+    url: 'https://rad-churros-f3cef0.netlify.app/',
+  },
+  {
+    title: 'Pocket Notes',
+    tagline: 'Minimal Note-Taking App',
+    year: '2023',
+    url: 'https://symphonious-griffin-f869fc.netlify.app/',
+  },
+  {
+    title: 'Super App',
+    tagline: 'Productivity Tool Collection',
+    year: '2022',
+    url: 'https://zesty-sorbet-38aa79.netlify.app/',
+  },
+  {
+    title: 'Rock Paper Scissors',
+    tagline: 'Classic Game, Modern UI',
+    year: '2022',
+    url: 'https://magical-salmiakki-3b1f2d.netlify.app/',
+  },
+];
+
+const ProjectItem = ({ title, tagline, year, url }) => (
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group grid grid-cols-12 gap-4 items-center py-8 border-b transition-all duration-300 cursor-pointer"
+    style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}
+  >
+    <h3 className="col-span-12 md:col-span-5 text-4xl md:text-5xl font-bold tracking-tighter transition-colors duration-300" style={{ color: netflixWhite }}>
+      {title}
+    </h3>
+    <p className="col-span-8 md:col-span-4 text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+      {tagline}
+    </p>
+    <p className="col-span-2 md:col-span-2 text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+      {year}
+    </p>
+    <div className="col-span-2 md:col-span-1 flex justify-end">
+      <svg className="w-8 h-8 transform -rotate-45 transition-all duration-300 group-hover:rotate-0 group-hover:translate-x-1" fill="none" stroke={netflixRed} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </div>
+  </a>
+);
 
 const Projects = () => {
   return (
-    <div className="flex justify-center h-5/6">
-      <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 w-full h-full gap-2 uppercase font-bold tracking-widest">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://rad-churros-f3cef0.netlify.app/"
-          className="bg-red-400 w-auto h-fit px-3 py-10 text-5xl hover:text-red-400 hover:bg-white hover:px-10 cursor-pointer"
-        >
-          Swiptory
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://symphonious-griffin-f869fc.netlify.app/"
-          className="bg-red-400 w-auto h-fit px-3 py-4 text-lg hover:text-red-400 hover:bg-white hover:px-10 cursor-pointer"
-        >
-          Pocket Notes
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://zesty-sorbet-38aa79.netlify.app/"
-          className="bg-red-400 w-auto h-fit px-3 py-1 text-md hover:text-red-400 hover:bg-white hover:px-10 cursor-pointer"
-        >
-          Super App
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://magical-salmiakki-3b1f2d.netlify.app/"
-          className="bg-red-400 w-auto h-fit px-3 py-14 text-3xl hover:text-red-400 hover:bg-white hover:px-2 cursor-pointer"
-        >
-          Rock Paper Scissors
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://astounding-cat-a21f58.netlify.app/"
-          className="bg-red-400 w-auto h-fit px-3 py-7 text-xl hover:text-red-400 hover:bg-white hover:px-10 cursor-pointer"
-        >
-          Stopwatch Timer
-        </a>
+    <section id="projects" className="w-full py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: netflixBlack }}>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-center text-4xl md:text-6xl font-black uppercase tracking-tighter mb-12" style={{ color: netflixWhite }}>
+          Selected Works
+        </h2>
+        <div className="border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}>
+          {projects.map((project, index) => (
+            <ProjectItem key={index} {...project} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
