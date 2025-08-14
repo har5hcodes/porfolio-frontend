@@ -37,20 +37,20 @@ const ProjectItem = ({ title, tagline, year, url }) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group grid grid-cols-12 gap-4 items-center py-8 border-b transition-all duration-300 cursor-pointer"
+    className="group grid grid-cols-12 gap-2 sm:gap-4 items-center py-6 sm:py-8 border-b transition-all duration-300 cursor-pointer"
     style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}
   >
-    <h3 className="col-span-12 md:col-span-5 text-4xl md:text-5xl font-bold tracking-tighter transition-colors duration-300" style={{ color: netflixWhite }}>
+    <h3 className="col-span-12 sm:col-span-8 md:col-span-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter transition-colors duration-300 mb-2 sm:mb-0" style={{ color: netflixWhite }}>
       {title}
     </h3>
-    <p className="col-span-8 md:col-span-4 text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+    <p className="col-span-8 sm:col-span-6 md:col-span-4 text-sm sm:text-base lg:text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
       {tagline}
     </p>
-    <p className="col-span-2 md:col-span-2 text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+    <p className="col-span-2 sm:col-span-4 md:col-span-2 text-sm sm:text-base lg:text-lg transition-colors duration-300" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
       {year}
     </p>
-    <div className="col-span-2 md:col-span-1 flex justify-end">
-      <svg className="w-8 h-8 transform -rotate-45 transition-all duration-300 group-hover:rotate-0 group-hover:translate-x-1" fill="none" stroke={netflixRed} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <div className="col-span-2 sm:col-span-2 md:col-span-1 flex justify-end">
+      <svg className="w-6 h-6 sm:w-8 sm:h-8 transform -rotate-45 transition-all duration-300 group-hover:rotate-0 group-hover:translate-x-1" fill="none" stroke={netflixRed} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
       </svg>
     </div>

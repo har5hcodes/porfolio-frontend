@@ -28,15 +28,37 @@ const workExperienceDetails = [
 
 const WorkExperience = () => {
   return (
-    <div className="h-screen bg-white text-black flex flex-col p-8 font-sans overflow-hidden">
-      <header className="flex items-baseline gap-8">
-        <h1 className="text-6xl font-bold tracking-tighter">WORK EXPERIENCE</h1>
-        <a href="/" className="text-lg font-medium tracking-wider hover:text-gray-500 flex items-center gap-2">
-          <span className="text-5xl leading-none">*</span>
+    <div className="min-h-screen bg-white text-black flex flex-col p-4 sm:p-6 lg:p-8 font-sans">
+      <header className="flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 mb-8">
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tighter">WORK EXPERIENCE</h1>
+        <a href="/" className="text-sm sm:text-lg font-medium tracking-wider hover:text-gray-500 flex items-center gap-2">
+          <span className="text-2xl sm:text-5xl leading-none">*</span>
           <span>CLOSE</span>
         </a>
       </header>
-      <main className="flex-grow flex flex-col justify-center items-center w-full px-4">
+      
+      {/* Mobile Layout */}
+      <div className="block lg:hidden flex-grow">
+        <div className="space-y-8">
+          {workExperienceDetails.map((job, index) => (
+            <div key={index} className="border-l-4 border-black pl-6 relative">
+              <div className="absolute -left-2 top-0 h-4 w-4 bg-black rounded-full"></div>
+              <div className="space-y-2">
+                <p className={`font-bold ${job.current ? 'text-lg' : 'text-base'}`}>{job.company}</p>
+                <p className="text-sm text-gray-700">{job.role}</p>
+                <p className="text-xs text-gray-500 tracking-widest">{job.date}</p>
+                <p className="text-xs text-gray-600">{job.location}</p>
+                {false && (
+                  <p className="text-sm text-gray-700 mt-2">{job.description}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Layout */}
+      <main className="hidden lg:flex flex-grow flex-col justify-center items-center w-full px-4">
         <div className="w-full relative border-t-2 border-black">
           <div className="flex justify-around absolute -top-2 w-full">
             {workExperienceDetails.map((job, index) => (
@@ -48,15 +70,14 @@ const WorkExperience = () => {
                   <p className={`font-bold ${job.current ? 'text-xl' : 'text-lg'}`}>{job.company}</p>
                   <p className="text-md">{job.role}</p>
                   <p className="text-xs text-gray-500 tracking-widest mt-1">{job.date}</p>
-                  {job.current && (
-                    <p className="text-5xl font-black tracking-[0.2em] scale-y-150 mt-4">NOW</p>
-                  )}
+                  
                 </div>
               </div>
             ))}
           </div>
         </div>
       </main>
+      
       <Footer showName={true} />
     </div>
   );
